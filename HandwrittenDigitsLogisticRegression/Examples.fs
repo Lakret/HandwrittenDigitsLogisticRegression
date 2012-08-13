@@ -10,6 +10,7 @@ open System.Windows.Forms.DataVisualization.Charting
 open MathNet.Numerics.Statistics
 
 open LogisticRegression
+open GradientDescent
 
 let (X, Y) = 
     File.ReadAllLines @"C:\Users\Lakret\Desktop\semeion.data.txt"
@@ -18,7 +19,7 @@ let (X, Y) =
     |> Array.map (fun line -> line.[..255], (line.[256..] |> Array.findIndex ((=) 1.0)))
     |> Array.unzip
 
-let reshape x y (line : _ array) = [| for j in 1..y -> line.[(j - 1) * x .. j * x - 1] |]
+let reshape n m (line : _ array) = [| for j in 1..m -> line.[(j - 1) * n .. j * n - 1] |]
 
 let visualizeInstanse (input : _ []) =
     let applyStyle chart =
@@ -43,10 +44,11 @@ FSharpChart.Line [| for h in 0. .. 0.01 .. 0.99 -> h, cost h 0.|]
 FSharpChart.Line [| for z in -10. .. 0.1 .. 10. -> z, sigmoid z|]
 
 let randGen = new Random()
-let randomParams = [| for i in 0..256 -> (randGen.NextDouble() - 0.5) * 3. |]
-let meaninglessPredictions = Array.map (h randomParams) X
+let n = X.[0].Length
+let trainedTheta = gradientDescent 0.000005 0.1 h X 
+                                   (Array.map (fun y -> if y = 2 then 1. else 0.) Y)
+                                   [| for j in 0..n -> randGen.NextDouble() - 0.5 |] 100000.
 
-FSharpChart.Line [| for i in 0..255 -> i, meaninglessPredictions.[i] |]
+h trainedTheta X.[50]
 
-Statistics.Mean meaninglessPredictions
-Statistics.StandardDeviation meaninglessPredictions
+J h trainedTheta X (Array.map (fun y -> if y = 2 then 1. else 0.) Y)

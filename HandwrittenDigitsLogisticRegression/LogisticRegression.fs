@@ -38,7 +38,7 @@ open HtmlAgilityPack       //HtmlAgility
 open Microsoft.FSharp.Math //PowerPack
 
 //мера ошибки для одного предсказания
-let cost h y = -y * Math.Log(h) - (1. - y) * Math.Log(1. - h)
+let cost predictedX y = -y * Math.Log(predictedX) - (1. - y) * Math.Log(1. - predictedX)
 
 let sigmoid z = 1. / (1. + Math.Exp(-z)) //or simply SpecialFunctions.Logistic
 
@@ -50,6 +50,3 @@ let J h theta (dataset : _ array) (groundTruth : _ array) =
 let h (theta : float array) x = 
     theta.[0] + (Array.sum <| Array.map2 (*) theta.[1..] x)
     |> sigmoid
-
-
-// float<logspace> for probs in logspace
