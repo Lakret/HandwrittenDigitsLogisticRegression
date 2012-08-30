@@ -38,12 +38,14 @@
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" Condition="!Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" Condition=" Exists('$(MSBuildBinPath)\Microsoft.Build.Tasks.v4.0.dll')" />
   <ItemGroup>
+    <Compile Include="Assessment.fs" />
     <Compile Include="GradientDescent.fs" />
     <Compile Include="LogisticRegression.fs" />
     <Compile Include="Examples.fs" />
     <Compile Include="Tests.fs" />
     <None Include="packages.config" />
     <None Include="FSharpChart.fsx" />
+    <Compile Include="Interface.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.PowerPack">
