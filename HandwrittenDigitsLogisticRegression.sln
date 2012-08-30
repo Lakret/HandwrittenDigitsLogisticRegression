@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6D03A0
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecognitionDemo", "RecognitionDemo\RecognitionDemo.csproj", "{04B7138A-1A90-4AEE-85BB-3886A1BD5893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecognitionDemoWPF", "RecognitionDemoWPF\RecognitionDemoWPF.csproj", "{76B88900-0873-4FF1-9063-29ECEAFDED98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,10 @@ Global
 		{0C7D6A8E-4ADF-434E-BFA9-11BACF4C15E0}.Debug|x86.Build.0 = Debug|x86
 		{0C7D6A8E-4ADF-434E-BFA9-11BACF4C15E0}.Release|x86.ActiveCfg = Release|x86
 		{0C7D6A8E-4ADF-434E-BFA9-11BACF4C15E0}.Release|x86.Build.0 = Release|x86
-		{04B7138A-1A90-4AEE-85BB-3886A1BD5893}.Debug|x86.ActiveCfg = Debug|x86
-		{04B7138A-1A90-4AEE-85BB-3886A1BD5893}.Debug|x86.Build.0 = Debug|x86
-		{04B7138A-1A90-4AEE-85BB-3886A1BD5893}.Release|x86.ActiveCfg = Release|x86
-		{04B7138A-1A90-4AEE-85BB-3886A1BD5893}.Release|x86.Build.0 = Release|x86
+		{76B88900-0873-4FF1-9063-29ECEAFDED98}.Debug|x86.ActiveCfg = Debug|x86
+		{76B88900-0873-4FF1-9063-29ECEAFDED98}.Debug|x86.Build.0 = Debug|x86
+		{76B88900-0873-4FF1-9063-29ECEAFDED98}.Release|x86.ActiveCfg = Release|x86
+		{76B88900-0873-4FF1-9063-29ECEAFDED98}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

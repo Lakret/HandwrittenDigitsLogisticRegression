@@ -43,9 +43,9 @@
     <Compile Include="LogisticRegression.fs" />
     <Compile Include="Examples.fs" />
     <Compile Include="Tests.fs" />
+    <Compile Include="Interface.fs" />
     <None Include="packages.config" />
     <None Include="FSharpChart.fsx" />
-    <Compile Include="Interface.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.PowerPack">

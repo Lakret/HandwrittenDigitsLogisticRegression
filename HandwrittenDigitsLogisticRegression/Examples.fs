@@ -14,7 +14,7 @@ open GradientDescent
 open Assessment
 
 let (X, Y) = 
-    File.ReadAllLines @"C:\Users\Slutsky\Desktop\semeion.data.txt"
+    File.ReadAllLines @"C:\Users\Lakret\Desktop\semeion.data.txt"
     |> Array.map (fun line -> line.Split([|' '|], StringSplitOptions.RemoveEmptyEntries) 
                               |> Array.map float)
     |> Array.map (fun line -> line.[..255], (line.[256..] |> Array.findIndex ((=) 1.0)))
@@ -46,20 +46,20 @@ FSharpChart.Line [| for z in -10. .. 0.1 .. 10. -> z, sigmoid z|]
 
 let randGen = new Random()
 let n = X.[0].Length
-let trainedTheta, stepsCurve = gradientDescent 0.00005 0.1 100 h X (Array.map (fun y -> if y = 2 then 1. else 0.) Y) [| for j in 0..n -> randGen.NextDouble() - 0.5 |]
+let trainedTheta, stepsCurve = gradientDescent 0.00005 0.1 1000 h X (Array.map (fun y -> if y = 2 then 1. else 0.) Y) [| for j in 0..n -> randGen.NextDouble() - 0.5 |]
 FSharpChart.Line (Array.ofList <| List.mapi (fun idx v -> float idx + 1., v) stepsCurve)
 
 visualizeInstanse X.[50]
-h trainedTheta X.[50] //0.97067883
+h trainedTheta X.[50] //0.957328255
 visualizeInstanse X.[70]
-h trainedTheta X.[70] //0.001859589623
+h trainedTheta X.[70] //1.725747306e-05
 
 printfn "The following information is based on test-set performance, therefore it is NOT representative (overly optimistic) and should NOT be trusted:"
 assess h X Y 2 trainedTheta
+//The following information is based on test-set performance, therefore it is NOT representative (overly optimistic) and should NOT be trusted:
+//1589 right (0.997489%) and 4 wrong answers were given. Precision = 1.000000, recall = 0.974843
 
-let fs = new FileStream(@"C:\Users\Slutsky\Desktop\trainedParams", FileMode.Create)
+let fs = new FileStream(@"C:\Users\Lakret\Desktop\trainedParams", FileMode.Create)
 let formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter()
 formatter.Serialize(fs, trainedTheta)
 fs.Close()
-
-trainedTheta
