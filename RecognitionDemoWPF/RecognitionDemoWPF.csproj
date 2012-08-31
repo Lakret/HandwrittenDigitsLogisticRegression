@@ -92,6 +92,13 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HandwrittenDigitsLogisticRegression\HandwrittenDigitsLogisticRegression.fsproj">
+      <Project>{0c7d6a8e-4adf-434e-bfa9-11bacf4c15e0}</Project>
+      <Name>HandwrittenDigitsLogisticRegression</Name>
+      <Aliases>RecognizerInterface</Aliases>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

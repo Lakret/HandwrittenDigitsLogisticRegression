@@ -1,12 +1,12 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HandwrittenDigitsLogisticRegression", "HandwrittenDigitsLogisticRegression\HandwrittenDigitsLogisticRegression.fsproj", "{0C7D6A8E-4ADF-434E-BFA9-11BACF4C15E0}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6D03A024-D492-4783-ABAD-10590DFA1ECA}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HandwrittenDigitsLogisticRegression", "HandwrittenDigitsLogisticRegression\HandwrittenDigitsLogisticRegression.fsproj", "{0C7D6A8E-4ADF-434E-BFA9-11BACF4C15E0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecognitionDemoWPF", "RecognitionDemoWPF\RecognitionDemoWPF.csproj", "{76B88900-0873-4FF1-9063-29ECEAFDED98}"
 EndProject

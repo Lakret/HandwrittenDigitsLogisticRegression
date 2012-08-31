@@ -1,6 +1,7 @@
 ﻿namespace Interface
 
 open LogisticRegression
+open Examples
 
 open System
 open System.IO
@@ -15,3 +16,6 @@ type RecognitionProvider(paramsFile : string) =
     
     member this.Theta = theta.Clone()
     member this.IsTwo(input : float array) = h theta input >= 0.5
+
+type Reshaper =
+    static member Reshape(arr, x, y) = reshape x y arr
